@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<form id="add-todo-form" hx-post="/api/todos" hx-target="#todo-items" hx-swap="beforeend" _="on htmx:afterRequest reset() me">
+  <md-filled-text-field type="text" id="title" name="title" label="Title" required></md-filled-text-field>
+  <div><br>
+    <md-filled-button type="submit">Submit</md-filled-button>
+    <md-outlined-button _="on click remove #add-todo-form then show #add-todo">Cancel</md-outlined-button>
+  </div>
+</form>

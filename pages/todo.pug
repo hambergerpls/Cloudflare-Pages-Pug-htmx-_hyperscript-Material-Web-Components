@@ -1,0 +1,17 @@
+extends /src/ui/layouts/root/layout.pug
+append head
+    - var title = "Cloudflare D1: Todo Demo"
+
+append header
+    include /src/ui/components/header.pug
+
+append content
+    h1 Cloudflare D1: Todo Demo
+    div(id="todo-list" hx-get="/api/todos" hx-trigger="load" hx-swap="beforeend")
+        h3 Todo List
+        md-icon-button(id="refresh-todos" hx-get="/api/todos" hx-target="#todo-items" hx-swap="outerHTML")
+            md-icon refresh
+        md-filled-button(id="add-todo" hx-get="/add-todo-form" hx-swap="afterend" _="on click hide me") Add Todo
+
+append footer
+    include /src/ui/components/footer.pug
